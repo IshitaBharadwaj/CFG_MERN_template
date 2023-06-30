@@ -2,6 +2,7 @@ import React from 'react'
 import {useForm} from 'react-hook-form'
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
+import NavbarLogin from './NavbarLogin';
 
 
 function Registration()
@@ -14,7 +15,7 @@ function Registration()
         axios.post("http://localhost:3001/register",userData)
         .then((res)=>{
             console.log(res)
-            navigate('/test')
+            navigate('/home')
         })
         .catch((err)=>{
             console.log(err)
@@ -24,6 +25,7 @@ function Registration()
     }
     return(
         <div id="reg">
+        <NavbarLogin/>
         <div className='container'>
         <div className='row'>
             <div className="col-11 col-sm-8 col-md-5 mx-auto mt-5 mb-4">

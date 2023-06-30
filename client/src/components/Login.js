@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import {useForm} from 'react-hook-form'
 import {useNavigate} from 'react-router-dom'
+import NavbarLogin from './NavbarLogin';
 
 function Login()
 {
@@ -15,7 +16,7 @@ function Login()
                 navigate.goBack();
             } //then redirect to landing page
             else{
-                navigate("/test");
+                navigate("/home");
             }
             console.log(res)
         
@@ -25,6 +26,7 @@ function Login()
     }
     return(
         <div id="re">
+        <NavbarLogin/>
         <div className='container-fluid'>
             <div className='row'>
             <div className="col-11 col-sm-8 col-md-4 mx-auto mt-5 mb-4">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-function Test() {
+import HomeNavbar from "./Navbar";
+function HomePage() {
 
   const [user, setUserData] = useState([]);
 
@@ -16,16 +17,17 @@ function Test() {
       });
   }, [])
 
-  return (<div>
-    <ul>
-      {user.map((ele, index) => (
-        <div key={index}>
-          <li >{ele['username']}</li>
-        </div>
-      ))}
-    </ul>
-
-    Test</div>);
+  return (
+    <div>
+      <HomeNavbar/>
+      <ul>
+        {user.map((ele, index) => (
+          <div key={index}>
+            <li >{ele['username']}</li>
+          </div>
+        ))}
+      </ul>
+    </div>);
 }
 
-export default Test;
+export default HomePage;
